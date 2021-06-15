@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.8.2 on win32)" generated="20210615 16:55:18.826" rpa="false" schemaversion="2">
+<suite id="s1" name="Add Items To Cart" source="C:\Users\saowaluk.pechngam\OneDrive - Accenture\Desktop\CPX_automation\powerbuy_project\automation\testcases\add_items_to_cart.robot">
+<test id="s1-t1" name="Test Case 001_Add TV items to cart and verify cart result">
+<kw name="Open web browser power buy">
+<kw name="Catenate" library="BuiltIn">
+<var>${message}</var>
+<arg>BROWSER=${browser}</arg>
+<arg>URL=${url}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210615 16:55:19.158" level="INFO">${message} = BROWSER=chrome URL=https://www.powerbuy.co.th/th/</msg>
+<status status="PASS" starttime="20210615 16:55:19.157" endtime="20210615 16:55:19.158"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>INFO</arg>
+<arg>${message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210615 16:55:19.158" endtime="20210615 16:55:19.159"/>
+</kw>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210615 16:55:19.159" level="INFO">Opening browser 'chrome' to base url 'https://www.powerbuy.co.th/th/'.</msg>
+<status status="PASS" starttime="20210615 16:55:19.159" endtime="20210615 16:55:31.947"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:55:31.949" level="INFO">${uuid} = bbd8e1bf-02c7-4bf6-ac79-68ddeeacf385</msg>
+<status status="PASS" starttime="20210615 16:55:31.948" endtime="20210615 16:55:31.949"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:55:32.991" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-bbd8e1bf-02c7-4bf6-ac79-68ddeeacf385.png"&gt;&lt;img src="selenium-bbd8e1bf-02c7-4bf6-ac79-68ddeeacf385.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:55:31.949" endtime="20210615 16:55:32.991"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:31.947" endtime="20210615 16:55:32.991"/>
+</kw>
+<kw name="Set Window Size" library="Selenium2Library">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" starttime="20210615 16:55:32.992" endtime="20210615 16:55:33.330"/>
+</kw>
+<kw name="Get Window Size" library="Selenium2Library">
+<var>${width}</var>
+<var>${height}</var>
+<doc>Returns current window width and height as integers.</doc>
+<msg timestamp="20210615 16:55:33.557" level="INFO">${width} = 1920</msg>
+<msg timestamp="20210615 16:55:33.557" level="INFO">${height} = 1080</msg>
+<status status="PASS" starttime="20210615 16:55:33.330" endtime="20210615 16:55:33.557"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${size}</var>
+<arg>Window Size=${width}</arg>
+<arg>${height}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210615 16:55:33.562" level="INFO">${size} = Window Size=1920 1080</msg>
+<status status="PASS" starttime="20210615 16:55:33.558" endtime="20210615 16:55:33.562"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:55:33.570" level="INFO">${uuid} = 55ce1ede-92b2-4d8b-b218-d428aea899fc</msg>
+<status status="PASS" starttime="20210615 16:55:33.569" endtime="20210615 16:55:33.570"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:55:34.609" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-55ce1ede-92b2-4d8b-b218-d428aea899fc.png"&gt;&lt;img src="selenium-55ce1ede-92b2-4d8b-b218-d428aea899fc.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:55:33.570" endtime="20210615 16:55:34.609"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:33.562" endtime="20210615 16:55:34.611"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:19.157" endtime="20210615 16:55:34.612"/>
+</kw>
+<kw name="When User search item and add items to cart">
+<arg>${item1}</arg>
+<arg>${filter44-55inches}</arg>
+<arg>${add_item1_to_cart_btn}</arg>
+<arg>${success_add_item1}</arg>
+<kw name="Search item and add items to cart">
+<arg>${select_item}</arg>
+<arg>${filter}</arg>
+<arg>${add_item_to_cart_btn}</arg>
+<arg>${success_add_item}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>//input[@id='txt-searchBox-input']</arg>
+<arg>TV</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210615 16:55:34.630" level="INFO">Typing text 'TV' into text field '//input[@id='txt-searchBox-input']'.</msg>
+<status status="PASS" starttime="20210615 16:55:34.630" endtime="20210615 16:55:35.255"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>//input[@id='txt-searchBox-input']</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210615 16:55:35.256" level="INFO">Sending key(s) ('ENTER',) to //input[@id='txt-searchBox-input'] element.</msg>
+<msg timestamp="20210615 16:55:35.570" level="INFO">Pressing special key ENTER to element.</msg>
+<status status="PASS" starttime="20210615 16:55:35.255" endtime="20210615 16:55:36.978"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:55:36.980" level="INFO">${uuid} = 0cdd0f52-0f45-429b-b8ab-fc3d5c0c4adf</msg>
+<status status="PASS" starttime="20210615 16:55:36.979" endtime="20210615 16:55:36.980"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:55:38.245" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-0cdd0f52-0f45-429b-b8ab-fc3d5c0c4adf.png"&gt;&lt;img src="selenium-0cdd0f52-0f45-429b-b8ab-fc3d5c0c4adf.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:55:36.980" endtime="20210615 16:55:38.245"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:36.978" endtime="20210615 16:55:38.246"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@class='Col__Column-sc-1619uro-0 ikKYdS']</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:55:38.246" endtime="20210615 16:55:38.582"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@title='ช่วงขนาดหน้าจอ (นิ้ว)']</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:55:38.582" endtime="20210615 16:55:44.198"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 16:55:49.200" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 16:55:44.198" endtime="20210615 16:55:49.200"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${filter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:55:49.200" level="INFO">Clicking element '//*[@title='ช่วงขนาดหน้าจอ (นิ้ว)']/div[2]/div/div/div[1]/div[1]/div'.</msg>
+<status status="PASS" starttime="20210615 16:55:49.200" endtime="20210615 16:55:50.214"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 16:55:55.216" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 16:55:50.215" endtime="20210615 16:55:55.216"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:55:55.220" level="INFO">${uuid} = f431d96c-2e74-44d0-9d7c-d7b6336e0857</msg>
+<status status="PASS" starttime="20210615 16:55:55.217" endtime="20210615 16:55:55.220"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:55:55.627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-f431d96c-2e74-44d0-9d7c-d7b6336e0857.png"&gt;&lt;img src="selenium-f431d96c-2e74-44d0-9d7c-d7b6336e0857.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:55:55.221" endtime="20210615 16:55:55.627"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:55.217" endtime="20210615 16:55:55.628"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${select_item}</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:55:55.628" endtime="20210615 16:55:55.674"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${select_item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:55:55.675" level="INFO">Clicking element '//*[@id='txt-productName-263085']'.</msg>
+<status status="PASS" starttime="20210615 16:55:55.674" endtime="20210615 16:55:56.197"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${add_item_to_cart_btn}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:55:56.197" endtime="20210615 16:55:58.467"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:55:58.469" level="INFO">${uuid} = 41ff7bd9-f5db-45bb-91b9-69e23fa74521</msg>
+<status status="PASS" starttime="20210615 16:55:58.468" endtime="20210615 16:55:58.469"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:55:59.110" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-41ff7bd9-f5db-45bb-91b9-69e23fa74521.png"&gt;&lt;img src="selenium-41ff7bd9-f5db-45bb-91b9-69e23fa74521.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:55:58.470" endtime="20210615 16:55:59.110"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:58.467" endtime="20210615 16:55:59.110"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${add_item_to_cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:55:59.111" level="INFO">Clicking element '//*[@id='btn-addCart-263085']'.</msg>
+<status status="PASS" starttime="20210615 16:55:59.111" endtime="20210615 16:55:59.366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${success_add_item}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:55:59.367" endtime="20210615 16:56:05.100"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:05.101" level="INFO">${uuid} = be351786-447a-4c3e-a29d-2c254f29f08f</msg>
+<status status="PASS" starttime="20210615 16:56:05.100" endtime="20210615 16:56:05.101"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:05.565" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-be351786-447a-4c3e-a29d-2c254f29f08f.png"&gt;&lt;img src="selenium-be351786-447a-4c3e-a29d-2c254f29f08f.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:05.101" endtime="20210615 16:56:05.566"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:05.100" endtime="20210615 16:56:05.566"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:34.627" endtime="20210615 16:56:05.567"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:34.624" endtime="20210615 16:56:05.568"/>
+</kw>
+<kw name="And User search item and add more items to cart">
+<arg>${item2}</arg>
+<arg>${filter32-43inches}</arg>
+<arg>${add_item2_to_cart_btn}</arg>
+<arg>${success_add_item2}</arg>
+<kw name="Search item and add items to cart">
+<arg>${select_item}</arg>
+<arg>${filter}</arg>
+<arg>${add_item_to_cart_btn}</arg>
+<arg>${success_add_item}</arg>
+<kw name="Input Text" library="Selenium2Library">
+<arg>//input[@id='txt-searchBox-input']</arg>
+<arg>TV</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210615 16:56:05.574" level="INFO">Typing text 'TV' into text field '//input[@id='txt-searchBox-input']'.</msg>
+<status status="PASS" starttime="20210615 16:56:05.574" endtime="20210615 16:56:06.085"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>//input[@id='txt-searchBox-input']</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210615 16:56:06.086" level="INFO">Sending key(s) ('ENTER',) to //input[@id='txt-searchBox-input'] element.</msg>
+<msg timestamp="20210615 16:56:06.330" level="INFO">Pressing special key ENTER to element.</msg>
+<status status="PASS" starttime="20210615 16:56:06.085" endtime="20210615 16:56:09.602"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:09.605" level="INFO">${uuid} = 0da581c2-bb85-4515-92e1-9bb7a0620f5a</msg>
+<status status="PASS" starttime="20210615 16:56:09.604" endtime="20210615 16:56:09.605"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:10.264" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-0da581c2-bb85-4515-92e1-9bb7a0620f5a.png"&gt;&lt;img src="selenium-0da581c2-bb85-4515-92e1-9bb7a0620f5a.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:09.605" endtime="20210615 16:56:10.264"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:09.603" endtime="20210615 16:56:10.265"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@class='Col__Column-sc-1619uro-0 ikKYdS']</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:56:10.265" endtime="20210615 16:56:10.371"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>//*[@title='ช่วงขนาดหน้าจอ (นิ้ว)']</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:56:10.372" endtime="20210615 16:56:10.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 16:56:15.442" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 16:56:10.438" endtime="20210615 16:56:15.442"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${filter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:56:15.443" level="INFO">Clicking element '//*[@title='ช่วงขนาดหน้าจอ (นิ้ว)']/div[2]/div/div/div[2]/div[1]/div'.</msg>
+<status status="PASS" starttime="20210615 16:56:15.443" endtime="20210615 16:56:16.141"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210615 16:56:21.147" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210615 16:56:16.141" endtime="20210615 16:56:21.147"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:21.148" level="INFO">${uuid} = 620d8d46-f676-4e08-b896-eb103c6143ad</msg>
+<status status="PASS" starttime="20210615 16:56:21.148" endtime="20210615 16:56:21.148"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:21.468" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-620d8d46-f676-4e08-b896-eb103c6143ad.png"&gt;&lt;img src="selenium-620d8d46-f676-4e08-b896-eb103c6143ad.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:21.148" endtime="20210615 16:56:21.469"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:21.147" endtime="20210615 16:56:21.469"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${select_item}</arg>
+<arg>40s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:56:21.469" endtime="20210615 16:56:21.529"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${select_item}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:56:21.530" level="INFO">Clicking element '//*[@id='lnk-viewProduct-260292-name']'.</msg>
+<status status="PASS" starttime="20210615 16:56:21.529" endtime="20210615 16:56:22.035"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${add_item_to_cart_btn}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:56:22.035" endtime="20210615 16:56:24.045"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:24.046" level="INFO">${uuid} = 4db9813b-af0f-4a98-b9e6-e57a25e13e61</msg>
+<status status="PASS" starttime="20210615 16:56:24.046" endtime="20210615 16:56:24.046"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:24.488" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-4db9813b-af0f-4a98-b9e6-e57a25e13e61.png"&gt;&lt;img src="selenium-4db9813b-af0f-4a98-b9e6-e57a25e13e61.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:24.046" endtime="20210615 16:56:24.488"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:24.045" endtime="20210615 16:56:24.488"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${add_item_to_cart_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:56:24.489" level="INFO">Clicking element '//*[@id='btn-addCart-260292']'.</msg>
+<status status="PASS" starttime="20210615 16:56:24.488" endtime="20210615 16:56:24.599"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${success_add_item}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210615 16:56:24.599" endtime="20210615 16:56:27.729"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:27.729" level="INFO">${uuid} = 83f523ab-cff4-401f-8a31-8a98428f4c9e</msg>
+<status status="PASS" starttime="20210615 16:56:27.729" endtime="20210615 16:56:27.730"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:28.126" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-83f523ab-cff4-401f-8a31-8a98428f4c9e.png"&gt;&lt;img src="selenium-83f523ab-cff4-401f-8a31-8a98428f4c9e.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:27.730" endtime="20210615 16:56:28.127"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:27.729" endtime="20210615 16:56:28.127"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:05.572" endtime="20210615 16:56:28.127"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:05.569" endtime="20210615 16:56:28.128"/>
+</kw>
+<kw name="Then Validate seleted items in the cart">
+<arg>${total_amount}</arg>
+<kw name="Click Element" library="Selenium2Library">
+<arg>//*[@id='btn-openMiniCart']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210615 16:56:28.130" level="INFO">Clicking element '//*[@id='btn-openMiniCart']'.</msg>
+<status status="PASS" starttime="20210615 16:56:28.129" endtime="20210615 16:56:29.367"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//*[@data-productid='260292']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 16:56:29.368" endtime="20210615 16:56:30.206"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>//*[@data-productid='263085']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210615 16:56:30.206" endtime="20210615 16:56:30.628"/>
+</kw>
+<kw name="Wait Until Element Contains" library="Selenium2Library">
+<arg>//*[@id='txt-productGrandTotalCartSummary']</arg>
+<arg>${total_amount}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20210615 16:56:30.628" endtime="20210615 16:56:30.673"/>
+</kw>
+<kw name="Capture Page Screenshot With Unique Name">
+<kw name="Uuid 4" library="uuid">
+<var>${uuid}</var>
+<doc>Generate a random UUID.</doc>
+<msg timestamp="20210615 16:56:30.675" level="INFO">${uuid} = e1eb3692-e603-42f5-b061-025138aef775</msg>
+<status status="PASS" starttime="20210615 16:56:30.674" endtime="20210615 16:56:30.675"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<arg>selenium-${uuid}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210615 16:56:30.959" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-e1eb3692-e603-42f5-b061-025138aef775.png"&gt;&lt;img src="selenium-e1eb3692-e603-42f5-b061-025138aef775.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210615 16:56:30.675" endtime="20210615 16:56:30.960"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:30.673" endtime="20210615 16:56:30.960"/>
+</kw>
+<status status="PASS" starttime="20210615 16:56:28.128" endtime="20210615 16:56:30.960"/>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210615 16:56:30.961" endtime="20210615 16:56:33.871"/>
+</kw>
+<status status="PASS" starttime="20210615 16:55:19.155" endtime="20210615 16:56:33.872"/>
+</test>
+<status status="PASS" starttime="20210615 16:55:18.829" endtime="20210615 16:56:33.875"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Add Items To Cart">Add Items To Cart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
